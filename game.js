@@ -613,20 +613,32 @@ class Player extends Actor {
 }
 
 
-// const schemas = [
-//   [
-//   	'           v              v                   v           ',
-//     '                                                          ',
-//     '              o                                           ',
-//     '          x  xxx            =                           o ',
-//     '    =     x                 x          =          xxxxxx  ',
-//     '       o  x                 x       xxxxxx        x       ',
-//     '     !xxxxx           xxxx  x o                   x       ',
-//     ' @                          xxxxx              xxxx       ',
-//     'xxx!     o       xxxx             =    o                  ',
-//     '         xxxxx                        xxxx                '
-//   ]
-// ];
+const schemas = [
+  [
+  	'           v              v                   v           ',
+    '                                                          ',
+    '              o                                           ',
+    '          x  xxx            =                           o ',
+    '    =     x                 x          =          xxxxxx  ',
+    '       o  x                 x       xxxxxx        x       ',
+    '     !xxxxx           xxxx  x o                   x       ',
+    ' @                          xxxxx              xxxx       ',
+    'xxx!     o       xxxx             =    o                  ',
+    '         xxxxx                        xxxx                '
+  ],
+  [
+  	'           v              v                   v           ',
+    '                                                          ',
+    '              o             =                             ',
+    '          x                 x          x                  ',
+    '    =     x                 x          xo         xxxxx   ',
+    '       o  x  xxx       xxx  x        xxxxx        x  =    ',
+    '     !xxxxx                 x o                   x       ',
+    ' @                  =       xxxxx              xxxx       ',
+    'xxx!  o           xxx             =    o            o     ',
+    '     xxxxxxxxx                        xxxx          xxxxxx'
+  ]
+];
 
 
 const actorDict = {
@@ -639,11 +651,14 @@ const actorDict = {
 
 const parser = new LevelParser(actorDict);
 
-loadLevels()
-	.then(sch => {
-		runGame(JSON.parse(sch), parser, DOMDisplay)
-			.then(() => alert('Вы выиграли приз!'));
-	});
+runGame(schemas, parser, DOMDisplay)
+	.then(() => alert('Вы выиграли!'));
+
+// loadLevels()
+// 	.then(sch => {
+// 		runGame(JSON.parse(sch), parser, DOMDisplay)
+// 			.then(() => alert('Вы выиграли приз!'));
+// 	});
 
 
 // loadLevels()
