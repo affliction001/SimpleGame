@@ -1,13 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 hidden {
   display: none;
 }
 
 body {
-    background-color: rgb(20, 120, 220);
+    background: rgb(20, 20, 20) url(../img/main-bg.jpg) center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .background {
-  background: rgb(52, 166, 251);
+  background: rgb(52, 166, 251) url(../img/bg.jpg) center bottom / cover;
   table-layout: fixed;
   border-spacing: 0;
 }
@@ -17,11 +27,12 @@ body {
 }
 
 .fireball {
-  background: rgb(255, 100, 100);
+  border-radius: 20px;
+  background: rgb(255, 100, 100) url(../img/lava.jpg) no-repeat;
 }
 
 .lava {
-  background: rgb(255, 100, 100);
+  background: rgb(255, 100, 100) url(../img/lava.jpg) repeat;
 }
 
 .elevator {
@@ -29,7 +40,7 @@ body {
 }
 
 .wall {
-  background: white;
+  background: white url(../img/wall.jpg) repeat 5px 10px;
 }
 
 .actor {
@@ -37,11 +48,12 @@ body {
 }
 
 .coin {
-  background: rgb(241, 229, 89);
+  border-radius: 8px;
+  background: rgb(241, 229, 89) url(../img/coin.png) no-repeat center center / cover;
 }
 
 .player {
-  background: rgb(64, 64, 64);
+  background: url(../img/player.png) center center no-repeat / cover;
 }
 
 .lost .player {
@@ -54,7 +66,20 @@ body {
 
 .game {
   overflow: hidden;
-  max-width: 600px;
+  max-width: 650px;
   max-height: 450px;
   position: relative;
+  box-shadow: 0 0 20px 8px blue;
+}
+
+@keyframes fireballAnimation {
+  from {box-shadow: 0 0 2px 2px yellow; background: rgb(255, 100, 100) url(../img/lava.jpg) no-repeat;}
+  25% {background: rgb(255, 100, 100) url(../img/lava.jpg) 0 -10px no-repeat;}
+  50% {box-shadow: 0 0 4px 4px orange; background: rgb(255, 100, 100) -10px -10px url(../img/lava.jpg) no-repeat;}
+  75% {background: rgb(255, 100, 100) url(../img/lava.jpg) -10px 0 no-repeat;}
+  to {box-shadow: 0 0 2px 2px yellow; background: rgb(255, 100, 100) url(../img/lava.jpg) no-repeat;}
+}
+
+.fireball {
+  animation: fireballAnimation 1s infinite linear;
 }
