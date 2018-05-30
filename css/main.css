@@ -82,38 +82,50 @@ body {
 }
 
 .container {
-  width: 650px;
-  height: 450px;
-  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   z-index: 120;
 }
 
 .push-up {
-  background-color: rgba(210, 0, 200, 0);
+  background-color: rgba(0, 0, 200, 0.2);
   position: absolute;
   z-index: 130;
-  bottom: 50%;
-  left: 0;
-  top: 0;
-  right: 0;
+  bottom: 0;
+  left: 34%;
+  width: 32vw;
+  height: 70px;
+}
+
+.push-up:hover {
+  background-color: rgba(0, 0 , 220, 0.4);
 }
 
 .push-left {
-  background-color: rgba(0, 0, 200, 0);
+  background-color: rgba(0, 0, 200, 0.2);
   position: absolute;
   z-index: 130;
   bottom: 0;
   left: 0;
-  top: 50%;
-  right: 50%;
+  width: 32vw;
+  height: 70px;
+}
+
+.push-left:hover {
+  background-color: rgba(0, 0 , 220, 0.4);
 }
 
 .push-right {
-  background-color: rgba(0, 210, 200, 0);
+  background-color: rgba(0, 0, 200, 0.2);
   position: absolute;
   z-index: 130;
   bottom: 0;
-  left: 50%;
-  top: 50%;
   right: 0;
+  width: 32vw;
+  height: 70px;
+}
+
+.push-right:hover {
+  background-color: rgba(0, 0 , 220, 0.4);
 }
