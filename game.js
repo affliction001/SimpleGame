@@ -624,7 +624,8 @@ const schemas = [
     '     !xxxxx           xxxx',
     ' @                        ',
     'xxx!     o       xxxx     ',
-    '         xxxxx            '
+    '         xxxxx            ',
+    '!!!!!!!!!!!!!!!!!!!!!!!!!!'
   ],
   [
   	'           v              v                   v           ',
@@ -636,7 +637,8 @@ const schemas = [
     '     !xxxxx           xxxx  x o                   x       ',
     ' @                          xxxxx              xxxx       ',
     'xxx!     o       xxxx             =    o                  ',
-    '         xxxxx                        xxxx                '
+    '         xxxxx                        xxxx                ',
+    '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
   ],
   [
   	'           v              v                   v           ',
@@ -648,7 +650,8 @@ const schemas = [
     '     !xxxxx                 x o                   x       ',
     ' @                  =       xxxxx              xxxx       ',
     'xxx!  o           xxx             =    o            o     ',
-    '     xxxxxxxxx                        xxxx          xxxxxx'
+    '     xxxxxxxxx                        xxxx          xxxxxx',
+    '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
   ]
 ];
 

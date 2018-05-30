@@ -82,8 +82,8 @@ body {
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 650px;
+  height: 450px;
   position: absolute;
   z-index: 120;
 }
@@ -98,8 +98,8 @@ input {
   z-index: 130;
   bottom: 0;
   left: 33.33%;
-  width: 33.33vw;
-  height: 100vh;
+  width: 33.33%;
+  height: 100%;
 }
 
 .push-left {
@@ -108,8 +108,8 @@ input {
   z-index: 130;
   bottom: 0;
   left: 0;
-  width: 33.33vw;
-  height: 100vh;
+  width: 33.33%;
+  height: 100%;
 }
 
 .push-right {
@@ -118,6 +118,6 @@ input {
   z-index: 130;
   bottom: 0;
   right: 0;
-  width: 33.33vw;
-  height: 100vh;
+  width: 33.33%;
+  height: 100%;
 }
