@@ -128,6 +128,14 @@ class DOMDisplay {
 
 var arrowCodes = {37: "left", 38: "up", 39: "right"};
 
+/********************/
+
+let upMouse = document.getElementById('pup');
+let leftMouse = document.getElementById('pleft');
+let rightMouse = document.getElementById('pright');
+
+/**********************/
+
 function trackKeys(codes) {
   var pressed = Object.create(null);
   function handler(event) {
@@ -137,8 +145,35 @@ function trackKeys(codes) {
       event.preventDefault();
     }
   }
+  function handler2(event) {
+    if (event.target.id === 'pup') {
+      var down = event.type == "mousedown";
+      pressed['up'] = down;
+      event.preventDefault();
+    }
+    if (event.target.id === 'pleft') {
+      var down = event.type == "mousedown";
+      pressed['left'] = down;
+      event.preventDefault();
+    }
+    if (event.target.id === 'pright') {
+      var down = event.type == "mousedown";
+      pressed['right'] = down;
+      event.preventDefault();
+    }
+  }
   addEventListener("keydown", handler);
   addEventListener("keyup", handler);
+
+  upMouse.addEventListener("mousedown", handler2);
+  upMouse.addEventListener("mouseup", handler2);
+
+  leftMouse.addEventListener("mousedown", handler2);
+  leftMouse.addEventListener("mouseup", handler2);
+
+  rightMouse.addEventListener("mousedown", handler2);
+  rightMouse.addEventListener("mouseup", handler2);
+
   return pressed;
 }
 

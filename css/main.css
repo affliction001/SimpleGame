@@ -28,7 +28,7 @@ body {
 
 .fireball {
   border-radius: 20px;
-  background: rgb(255, 100, 100) url(../img/lava.jpg) no-repeat;
+  background: url(../img/fireball.png) center center no-repeat / cover;
 }
 
 .lava {
@@ -40,7 +40,7 @@ body {
 }
 
 .wall {
-  background: white url(../img/wall.jpg) repeat 5px 10px;
+  background: white url(../img/wall.jpg) repeat 5px 8px;
 }
 
 .actor {
@@ -73,13 +73,47 @@ body {
 }
 
 @keyframes fireballAnimation {
-  from {box-shadow: 0 0 2px 2px yellow; background: rgb(255, 100, 100) url(../img/lava.jpg) no-repeat;}
-  25% {background: rgb(255, 100, 100) url(../img/lava.jpg) 0 -10px no-repeat;}
-  50% {box-shadow: 0 0 4px 4px orange; background: rgb(255, 100, 100) -10px -10px url(../img/lava.jpg) no-repeat;}
-  75% {background: rgb(255, 100, 100) url(../img/lava.jpg) -10px 0 no-repeat;}
-  to {box-shadow: 0 0 2px 2px yellow; background: rgb(255, 100, 100) url(../img/lava.jpg) no-repeat;}
+  from { transform: rotateZ(0deg); }
+  to { transform: rotateZ(-360deg); }
 }
 
 .fireball {
-  animation: fireballAnimation 1s infinite linear;
+  animation: fireballAnimation 800ms infinite linear;
+}
+
+.container {
+  width: 650px;
+  height: 450px;
+  position: absolute;
+  z-index: 120;
+}
+
+.push-up {
+  background-color: rgba(210, 0, 200, 0);
+  position: absolute;
+  z-index: 130;
+  bottom: 50%;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.push-left {
+  background-color: rgba(0, 0, 200, 0);
+  position: absolute;
+  z-index: 130;
+  bottom: 0;
+  left: 0;
+  top: 50%;
+  right: 50%;
+}
+
+.push-right {
+  background-color: rgba(0, 210, 200, 0);
+  position: absolute;
+  z-index: 130;
+  bottom: 0;
+  left: 50%;
+  top: 50%;
+  right: 0;
 }
