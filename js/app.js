@@ -148,17 +148,17 @@ function trackKeys(codes) {
   function handler2(event) {
     console.log(event);
     if (event.target.id === 'pup') {
-      var down = event.type == "keydown";
+      var down = event.type == "touchstart";
       pressed['up'] = down;
       event.preventDefault();
     }
     if (event.target.id === 'pleft') {
-      var down = event.type == "keydown";
+      var down = event.type == "touchstart";
       pressed['left'] = down;
       event.preventDefault();
     }
     if (event.target.id === 'pright') {
-      var down = event.type == "keydown";
+      var down = event.type == "touchstart";
       pressed['right'] = down;
       event.preventDefault();
     }
@@ -166,14 +166,14 @@ function trackKeys(codes) {
   addEventListener("keydown", handler);
   addEventListener("keyup", handler);
 
-  upMouse.addEventListener("keydown", handler2);
-  upMouse.addEventListener("keyup", handler2);
+  upMouse.addEventListener("touchstart", handler2);
+  upMouse.addEventListener("touchend", handler2);
 
-  leftMouse.addEventListener("keydown", handler2);
-  leftMouse.addEventListener("keyup", handler2);
+  leftMouse.addEventListener("touchstart", handler2);
+  leftMouse.addEventListener("touchend", handler2);
 
-  rightMouse.addEventListener("keydown", handler2);
-  rightMouse.addEventListener("keyup", handler2);
+  rightMouse.addEventListener("touchstart", handler2);
+  rightMouse.addEventListener("touchend", handler2);
 
   return pressed;
 }
