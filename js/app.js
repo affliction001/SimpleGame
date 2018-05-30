@@ -146,7 +146,6 @@ function trackKeys(codes) {
     }
   }
   function handler2(event) {
-    console.log(event);
     if (event.target.id === 'pup') {
       var down = event.type == "touchstart";
       pressed['up'] = down;
