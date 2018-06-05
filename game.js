@@ -282,9 +282,7 @@ class Level {
 				this.removeActor(actor);
 
 				this.actors.some(item => {
-					if (item.type === 'coin') {
-						return true;
-					}
+					return item.type === 'coin';
 				});
 
 				if (find === false) {
@@ -329,6 +327,7 @@ class LevelParser {
 		Принимает символ, _строка_. Возвращает конструктор объекта по его символу, используя словарь. Если в словаре не нашлось ключа 
 		с таким символом, вернет `undefined`.
 	*/
+
 	actorFromSymbol(symbol) {
 		if (symbol === undefined) {
 			return undefined;
