@@ -6,6 +6,7 @@
 */
 
 class Vector {
+
 	/*
 	Конструктор:
 		Принимает два аргумента — координаты по оси X и по оси Y, _числа_, по умолчанию `0`.
@@ -25,11 +26,11 @@ class Vector {
 	*/
 	
 	plus(vector) {
-		if (vector instanceof Vector) {
-			return new Vector(this.x + vector.x, this.y + vector.y);
-		} else {
+		if (!(vector instanceof Vector)) {
 			throw new Error('Передаваемый в функцию обьект не является вектором.');
 		}
+
+		return new Vector(this.x + vector.x, this.y + vector.y);
 	}
 
 	/*
@@ -50,6 +51,7 @@ class Vector {
 */
 
 class Actor {
+	
 	/*
 	Конструктор:
 		Принимает три аргумента: расположение, _объект_ типа `Vector`, размер, тоже _объект_ типа `Vector` и скорость, тоже _объект_ типа `Vector`. 
@@ -144,6 +146,7 @@ class Level {
 
 	get width() {
 		let width = 0;
+
 		this.grid.forEach(string => {
 			if (string.length > width) {
 				width = string.length;
@@ -235,6 +238,7 @@ class Level {
 
 	removeActor(actor) {
 		let index = this.actors.indexOf(actor);
+
 		if (index !== -1) {
 			this.actors.splice(index, 1);
 		}
@@ -275,19 +279,21 @@ class Level {
 	*/
 
 	playerTouched(barrier, actor) {
-		if (this.status === null) {
-			if (barrier === 'lava' || barrier === 'fireball') {
-				this.status = 'lost';
-			} else if (barrier === 'coin' && actor.type === 'coin') {
-				this.removeActor(actor);
+		if (this.status !== null) {
+			return;
+		}
 
-				const find = this.actors.some(item => {
-					return item.type === 'coin';
-				});
+		if (barrier === 'lava' || barrier === 'fireball') {
+			this.status = 'lost';
+		} else if (barrier === 'coin' && actor.type === 'coin') {
+			this.removeActor(actor);
 
-				if (find === false) {
-					this.status = 'won';
-				}
+			const find = this.actors.some(item => {
+				return item.type === 'coin';
+			});
+
+			if (find === false) {
+				this.status = 'won';
 			}
 		}
 	}
@@ -348,8 +354,7 @@ class LevelParser {
 	obstacleFromSymbol(symbol) {
 		if (symbol === 'x') {
 			return 'wall';
-		}
-		else if (symbol === '!') {
+		} else if (symbol === '!') {
 			return 'lava';
 		}
 	}
@@ -512,6 +517,7 @@ class HorizontalFireball extends Fireball {
 */
 
 class VerticalFireball extends Fireball {
+
 	/*
 	Конструктор должен принимать один аргумент: координаты текущего положения, _объект_ `Vector`. И создавать объект размером `1:1` и скоростью, 
 	равной `2` по оси Y.
@@ -528,6 +534,7 @@ class VerticalFireball extends Fireball {
 */
 
 class FireRain extends Fireball {
+
 	/*
 	Конструктор должен принимать один аргумент — координаты текущего положения, _объект_ `Vector`. И создавать объект размером `1:1` и скоростью, 
 	равной `3` по оси Y.
@@ -549,6 +556,7 @@ class FireRain extends Fireball {
 */
 
 class Coin extends Actor {
+	
 	/*
 	Конструктор:
 		Принимает один аргумент — координаты положения на игровом поле, _объект_ `Vector`.
